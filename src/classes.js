@@ -9,11 +9,11 @@ export class A extends React.Component {
   }
 }
 
-// A.propTypes = {
-//   value: PropTypes.string
-// }
+// if we comment out the propTypes below, the class A is eliminated from the bundle
+A.propTypes = {
+  value: PropTypes.string
+}
 
-// if we comment out the propTypes above, the class A is eliminated from the bundle
 
 class B extends React.Component {
   val(){
@@ -21,10 +21,11 @@ class B extends React.Component {
   }
 }
 
-// export const ConnectedB = connect(null, null)(B);
-// if we comment out the above connect, then class B is also eliminated from the bundle
 
-export {B};
+// if we comment out the connect, then class B is also eliminated from the bundle
+const ConnectedB = connect(null, null)(B);
+
+export {B, ConnectedB};
 
 export class C {
   val(){
