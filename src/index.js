@@ -1,3 +1,1 @@
-import {C} from './classes'
-
-console.log(new C().val());
+import './dummy-file';
